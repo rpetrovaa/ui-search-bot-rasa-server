@@ -1,0 +1,629 @@
+version: "2.0"
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - Hey bot
+      - hello there
+      - hi again
+      - moin
+      - hey there
+      - let's go
+      - hey dude
+      - good morning
+      - good evening
+      - goodmorning
+      - goodevening
+      - good afternoon
+      - hii
+      - hi hi
+      - heeey
+      - well hello there ;)
+      - whats up
+      - hey lets talk
+      - hellooo
+      - heeyy
+      - helllooo
+      - heey
+  - intent: goodbye
+    examples: |
+      - good afternoon
+      - cu
+      - good by
+      - see you later
+      - good night
+      - bye
+      - goodbye
+      - have a nice day
+      - see you around
+      - bye bye
+      - bb
+      - ciao
+      - talk to you later
+      - bye it was nice talking to you
+      - farewell
+      - gotta go
+      - tschüss
+      - b
+  - intent: affirm
+    examples: |
+      - yes
+      - y
+      - indeed
+      - of course
+      - that sounds good
+      - correct
+      - yes :)
+      - good
+      - kind of
+      - yep, it did :)
+      - yes, thank you
+      - yes, very much
+  - intent: deny
+    examples: |
+      - no
+      - n
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - no, thanks
+      - not at all
+      - no, these screens are of no use
+      - nope
+  - intent: help
+    examples: |
+      - What can you do?
+      - What should I ask you?
+      - how can you help me
+      - I need help
+      - help me
+      - I'm stuck
+      - i don't know what to do
+      - I think you can help me
+      - i guess you can help me then
+      - i guess you can help
+      - Will you help me
+      - can you help me
+      - Please help me
+      - If you don't mind, I really need your help
+      - Could you please help me
+      - Do you think you can help me?
+      - Will you be able to help me?
+      - Can you please help me
+      - help
+  - intent: thanks
+    examples: |
+      - Thanks
+      - Thank you
+      - Thank you so much
+      - Thanks bot
+      - Thanks for that
+      - cheers
+      - cheers bro
+      - ok thanks!
+      - perfect thank you
+      - thanks a bunch for everything
+      - thanks for the help
+      - thanks a lot
+      - amazing, thanks
+      - cool, thanks
+      - cool thank you
+      - thanks
+      - thanks!
+      - Cool. Thanks
+      - thanks this is great news
+      - thank you
+      - great thanks
+      - Thanks!
+      - cool thanks
+      - Thanks a ton
+      - thanks a bunch
+      - Thank you very much
+  - intent: joke
+    examples: |
+      - Tell me a joke
+      - joke
+      - Can you please tell me a joke
+      - Pls tell me a joke
+      - I want to hear a joke
+      - joke pls
+      - Would you tell me a joke?
+      - What jokes do you know?
+      - Are you funny?
+      - Do you know any jokes?
+  - intent: ask_how_doing
+    examples: |
+      - Ahoy matey how are you?
+      - are you alright
+      - are you having a good day
+      - Are you ok?
+      - are you okay
+      - Do you feel good?
+      - how are things going
+      - how are things with you?
+      - How are things?
+      - how are you
+      - how are you doing
+      - how are you doing this morning
+      - how are you feeling
+      - how are you today
+      - How are you?
+      - how do you do?
+      - how have you been
+      - how is it going
+      - how is your day
+      - how is your day going
+      - how is your evening
+      - How was your day?
+      - How's it going
+      - How's it hanging?
+      - how's life
+      - how's life been treating you?
+      - How's life treating you friend?
+      - how's your day going
+      - How've you been?
+      - I'm fine and you
+      - is everything all right
+      - Is everything ok?
+      - is everything okay
+      - what about your day
+      - What's going on?
+      - what's good
+      - What's new?
+      - What's up man
+      - What's up
+      - how are you?
+      - Do you have a great day?
+      - how are you doing today my sweet friend
+      - how are you doing?
+      - how are u
+  - intent: bot_challenge
+    examples: |
+      - are you a bot?
+      - are you a human?
+      - am I talking to a bot?
+      - am I talking to a human?
+      - alexa
+      - what's your name?
+      - who r u?
+      - whom am I speaking to?
+  - intent: requirement_query
+    examples: |
+      - [login](query_1)
+      - [profile](query_1) page
+      - [social login](query_1) screen
+      - As a user I want to have a [sports widget](query_1)
+      - I would like to have a [sports](query_1) screen
+      - need [logout](query_1)
+      - [social profile](query_1)
+      - [submit](query_1)
+      - [logon](query_1)
+      - i need a [search box](query_1)
+      - [settings](query_1)
+      - i am looking for a [clock widget](query_1)
+      - I want to have [search box](query_1) screens
+      - show me [email](query_1) screens please
+      - [mail](query_1) screen pls
+      - okay. I want to have [recipe search](query_1) screens
+      - [email](query_1) uis
+      - show me results with a [remember me function](query_1)
+      - i want to see results which have a [login button](query_1)
+      - please return results with [radio buttons](query_1)
+      - results with [checkboxes](query_1)
+      - as a user i want to have a screen with [modal](query_1)
+      - i need a [slider control](query_1)
+      - [search field](query_1)
+      - [notification](query_1) screen
+      - find me UI screens which have a [tooltip](query_1)
+      - for my application I need a [submit form](query_1)
+      - give me GUIs with a [dropdown](query_1)
+      - would like to see a [menu](query_1)
+      - [news](query_1) screen
+      - i need [news video](query_1) screens
+      - return [news reportage](query_1) screens
+      - uis about [news brodcast](query_1)
+      - [travel ui with check-in and check-out input fields](query_1)
+      - [subscribe button](query_1)
+      - [news feed](query_1)
+      - [product cart](query_1)
+      - [shopping cart](query_1)
+      - [shopping basket](query_1)
+      - [shopping bag](query_1)
+      - I would like [sign-in with social media](query_1)
+      - i want [sign-in with facebook](query_1)
+      - [pedometer](query_1)
+      - screens which have a [toggle button](query_1)
+      - can you show me [calculators](query_1) please
+      - i want to make a [booking](query_1)
+      - [camera](query_1)
+      - in need of a [splash](query_1) screen
+      - looking for [weather] examples
+      - [fitness](query_1) app
+      - [rent paymenet](query_1)
+      - searching for screens with [pay bills](query_1)
+      - i am searching for [frequently asked questions faq](query_1) uis
+      - [help instructions](query_1)
+      - [sign out button](query_1)
+      - [shop](query_1) screens
+      - [contact option](query_1)
+      - I'd like to have a screen for [tracking parcel](query_1)
+      - im interested in uis to [track flight status](query_1)
+      - looking for examples where you can [monitor progress](query_1)
+      - examples to [select language](query_1)
+      - i am looking for [health app](query_1) screens
+      - screen where you can [enter and submit personal data](query_1)
+      - ui to [type text for email](query_1)
+      - [go back button](query_1)
+      - gimme screens for [submit form with a cancel button](query_1)
+      - screen where i can [add to my favorites](query_1)
+      - [Log in](query_1)
+      - [Account](query_1)
+      - [Passwords and usernames](query_1)
+      - I would like to get a screen where I can [log into my account](query_1) for an app
+      - I am looking for a [shopping app with login] option
+      - I am looking for a [shopping app with Facebook login] option
+      - I want to [sign up](query_1) for an app
+      - i would like to [make an account](query_1)
+      - i would like to [sign in](query_1)
+      - I want a simple screen for [Shopping](query_1) UI
+      - show me a login screen where I can [login using facebook or gmail](query_1)
+      - I want to see my [profile](query_1)
+      - I would like to see the [setting of my profile](query_1)
+      - Yes, i want a screen where I see [menu](query_1) options
+      - I want a screen where I can customize my [profile settings](query_1)
+      - can I know my [activity on the app](query_1)?
+      - I want to know my [friend's activity](query_1) on the app
+      - I want to [set up my privacy](query_1)
+      - I am looking for a screen with [personal settings](query_1)
+      - I want [shopping](query_1) application
+      - I want a screen to see [profile, search history and friend's rating](query_1)
+      - Yes, I would like to have a screen showing the different [shopping items, clothes and models](query_1).
+      - [Best sellers](query_1)
+      - yes, I would like to [filter](query_1) some results
+      - I want a screen where I can see [multiple items with their price](query_1)
+      - I want to see the [products](query_1)
+      - I want to find some [clothes](query_1)
+      - I am looking for a screen that displays all [items in a grid](query_1)
+      - I am looking for a screen that displays all [clothes in a grid](query_1)
+      - screen for [catalogue with filters](query_1)
+      - screen for [clothes catalogue with filters](query_1)
+      - I would like to have the option to [close the empty shopping bag on the upper right corner](query_1).
+      - [Online shopping basket](query_1)
+      - I want to see my [shopping bag for clothes](query_1)
+      - I want to [check out](query_1)
+      - screen for [shopping bag with a close option](query_1)
+      - [Payment and shipping](query_1)
+      - i want to [check out my order](query_1)
+      - I want to know the [delivery time](query_1)
+      - I want to see the [shipment information](query_1)
+      - I am looking for a screen with [payment and shipping form](query_1)
+      - screen for [checkout order and summary](query_1)
+      - I would like to have several examples of [destinations with pictures](query_1).
+      - I would like to have a [travel destination with a photo](query_1) as an example on the very first screen of my travel app.
+      - [Flight tickets](query_1)
+      - [Vacation flight tickets](query_1)
+      - [Vacation flights search](query_1)
+      - i want to [buy flight tickets](query_1)
+      - I want a [travel](query_1) app
+      - I need a screen where I can [search for flights giving dates and destination](query_1)
+      - I want to [book my trip](query_1)
+      - I am looking for a [travel app with a flight searching option](query_1)
+      - I am looking for a screen to [search a flight](query_1)
+      - I am looking for a screen to [search for a travel destination](query_1)
+      - I am searching for a screen with [flight searching form](query_1)
+      - Screen for [travel booking](query_1)
+      - Screen for [travel booking with dates and prices](query_1)
+      - I want to [edit my travel details and insurance](query_1)
+      - [Contact details](query_1)
+      - I need a screen where I can [log in and add my travel details](query_1)
+      - I need a screen where I [add my travel details](query_1)
+      - I want to [fill in my travel information](query_1)
+      - I am searching for a screen with [personal information form](query_1)
+      - screen for [passenger details and insurance options](query_1)
+      - I want to [find a hotel](query_1) to stay in
+      - i want to see [hotels in a chosen city](query_1)
+      - i want to see the [prices of hotels in a chosen city](query_1)
+      - [Hotel search](query_1)
+      - [Select location for hotels](query_1)
+      - [Check in and check out dates](query_1)
+      - [Hotels + prices](query_1)
+      - [Hotels and prices](query_1)
+      - [Cheapest hotels](query_1)
+      - [2 stars hotels and prices](query_1)
+      - [hotels, prices and guest reviews](query_1)
+      - [Hotel location, prices and guest rating](query_1)
+      - I want to [book a hotel](query_1)
+      - I want to see [what hotels are available](query_1)
+      - I want to look for a [hotel to stay for two nights](query_1)
+      - I want to [book a hotel for me and my friend for two nights](query_1)
+      - I am looking for a screen to [search a hotel for a period of time](query_1)
+      - screen for [hotel booking with dates and guests](query_1)
+      - I want to [find the best hotel in my area](query_1)
+      - [Book and pay for a room](query_1)
+      - Yes, I want a screen with a [map that shows multiple hotels and their price](query_1)
+      - I want to [compare prices of the hotels](query_1)
+      - I am looking for a screen that displays all possible [hotels on a map](query_1)
+      - screen for [prices in my area in maps](query_1)
+      - I want to [book a room in a hotel](query_1)
+      - I need a screen that shows the [booking summary for a hotel](query_1)
+      - I want to [pay for the hotel I booked](query_1)
+      - I am looking for a screen with [booking form](query_1)
+      - i want to [book the hotel of my choosing](query_1)
+      - screen for [hotel booking info and payment summary](query_1)
+      - I want to read the [news headlines](query_1)
+      - [Privacy policy](query_1)
+      - I need a screen that shows the [main title of a news article](query_1) in the browser
+      - I want to see some [news](query_1)
+      - I want to see [news on politics](query_1)
+      - I want to see [news on different topics](query_1)
+      - I am looking for a screen that displays the [home page of a news magazine](query_1)
+      - i want to see a [specific news article](query_1)
+      - screen for [news app with headlines and summary](query_1)
+      - I want to [set my news preferences](query_1)
+      - [Topics of interest](query_1)
+      - I want a screen where I can [choose mt interests regarding news articles](query_1)
+      - I want to see [labels of news topics](query_1)
+      - I want to [select my news preference](query_1)
+      - I am looking for a screen to [filter the news by interest](query_1)
+      - i would like to [choose topics that interest me](query_1)
+      - screen for [different categories of news](query_1)
+      - I want to [subscribe to a sports newsletter](query_1)
+      - [Newsletter and subscription](query_1)
+      - I want a screen where I can [sign up fo a newsletter](query_1)
+      - I want to [request a newsletter](query_1)
+      - I am looking for a screen with [subscribe option](query_1)
+      - i would like to [receive news from a newsletter](query_1)
+      - I want to [track my fitness](query_1)
+      - [Pedometer and workout](query_1)
+      - I want a screen where I can [specify a workout I am doing](query_1)
+      - I want a screen that shows my [step count and possible workouts](query_1)
+      - I want to see [how much I workout](query_1)
+      - I want to know [how many steps I walked](query_1)
+      - I want to know [how many footsteps I walked](query_1)
+      - I am looking for a screen that displays [various workouts](query_1)
+      - I am looking for a screen that [measures steps](query_1)
+      - i want to [choose my work out](query_1)
+      - i want to see an app for [workouts](query_1)
+      - screen for [health workout with exercises icons](query_1)
+      - screen for [health workout with number of steps](query_1)
+      - screen for [health workout with exercise routines and steps](query_1)
+      - screen for [personalize plans](query_1)
+      - screen for [personalize plans for body workout](query_1)
+      - I want to know [how many calories I should consume in a day](query_1)
+      - Enter [Person body values](query_1)
+      - [Body values and calorie goals](query_1)
+      - I want a screen where I can [enter and edit my body details](query_1)
+      - I want a screen where I can [enter and edit my physical details](query_1)
+      - I want a screen that displays a [list to edit my body values](query_1)
+      - I want a screen that displays a [list of my body values](query_1)
+      - I want to [fill in information about my body](query_1)
+      - I want to [fill in information about my body to set my workout goal](query_1)
+      - I want to know what are the [sport exercises available](query_1)
+      - I want to know what [other sports](query_1) I can do
+      - I want to know what are the [different ways to train myself](query_1)
+      - I want to do [different sport exercises](query_1)
+      - I am looking a screen to [fill in my personal data](query_1)
+      - I am looking a screen to [enter my body values](query_1)
+      - I am looking for a screen with [form to enter a body details](query_1)
+      - I am looking for a screen with [form to fill personal data](query_1)
+      - I am looking for a screen to [enter personal data](query_1)
+      - I am looking for a screen to [enter pesonal body data](query_1)
+      - i want an app that [calculates my calories](query_1)
+      - i want an app for [losing weight](query_1)
+      - i want that [measures my body values](query_1)
+      - screen for [different type of exercises](query_1)
+      - I want to [find some good cardio exercises](query_1)
+      - I want [different exercises](query_1)
+      - I want to [track my exercise](query_1)
+      - [Sport categories](query_1)
+      - [Exercise categories](query_1)
+      - [Sport exercise categories](query_1)
+      - I want a screen where I can [specify a workout I am doing](query_1)
+      - I want a screen from which I can [choose a specific workout](query_1)
+      - I am looking for a screen that displays [various workout types in a list](query_1)
+      - i want to see [different workouts](query_1)
+      - screen for [different type of exercises and sports](query_1)
+      - screen for [different type of exercises and sports and training](query_1)
+      - screen for [different type of exercises and training with icons](query_1)
+      - [clothes with filter](query_1
+      - i want to [filter clothes](query_1)
+      - i want to have [filtering for clothes](query_1)
+      - i want a [shopping app with filtering option](query_1)
+      - i want to have a [pie chart](query_1)
+      - i want to have a [search engine](query_1)
+      - i want to have a [weekly planner](query_1)
+      - screen with [cookie consent](query_1)
+      - see a screen where you can [transact money](query_1)
+      - [banking overview](query_1)
+      - [antivirus protection](query_1)
+      - i want to have a [financial data] screen
+      - i want to have a [book](query_1) app
+      - i want to have a [task organizer](query_1) app
+      - i want to have [disclaimer pop-up](query_1)
+      - I only want to have results in [english](query_1)
+      - only results in [german](query_1)
+      - only screens for [sports](query_1)
+      - yes, but show me only screens for [clothing](query_1)
+      - i only want to have [social login](query_1)
+      - i only need [login with facebook](query_1)
+      - only uis with [menu](query_1)
+      - i want to have results with [radio button](query_1)
+      - i want to be able to [enter contact information](query_1) as well
+      - i would like to see screens with a [notification icon only](query_1)
+      - i need only uis with [hamburger menu](query_1)
+      - only uis with [checked checkbox](query_1)
+      - show me only screens with [US currency](query_1)
+      - no, i just want to have an [empty shopping cart](query_1)
+      - i want to have screens that have a [share button](query_1)
+      - only screens with [sharing option](query_1)
+      - just [shopping for clothing](query_1)
+      - there are no examples with [action menu](query_1). I would like to see more.
+      - only with [google maps](query_1)
+      - i am just looking for results with a [logo](query_1)
+      - no i only want you to show me [weather forecast maps](query_1)
+      - yeah but i just want results with a [scroll bar](query_1)
+      - only where there is a [clicked button](query_1)
+      - but show me the screens with a [pressed menu](query_1)
+      - screens for [insurance](query_1) exclusively
+      - just [total price fields](query_1)
+      - just uis with [item list](query_1)
+      - simply with a [bottom bar](query_1)
+      - can you further show me only the screens which have [top navigation](query_1)
+      - i am only interested in the examples with a [list toggle](query_1)
+      - there are no screens with [statistics](query_1)
+      - would love to have more uis with an [intro dashboard](query_1)
+      - there are too few examples with a [filter button](query_1). can you show me more?
+      - only where the [item is selected](query_1)
+      - pls return only screens where you can see [reservation details](query_1)
+      - you didnt return any results with [pedometer](query_1). I want to see more examples with it.
+      - only [map with zoom in and zoom out buttons](query_1)
+      - only [maps with satelite view](query_1)
+      - no, there are no [input fields to enter personal details](query_1) and thats what I am looking for
+      - you dont understand... there is no [next button](query_1). thats what im looking for!
+      - just the screens with a [cancel button](query_1)
+      - just where there is a [star rating](query_1)
+      - I would also like the option to [filter](query_1) through results and have no more than 4 options on the screen.
+      - Depending on my [activity level](query_1)
+      - only [items in a list](query_1)
+      - i only want [products in a grid](query_1)
+      - No I want to [change my contact details and preferences](query_1)
+      - First, I need a [login](query_1) screen, where the users of a [shopping](query_2) app can [log into their accounts](query_3).
+      - No, I wish to have a screen with at least 8 [options](query_1) of [different Settings](query_2) that the users can go into. Options like [Ratings, Search History, Profile](query_3) etc.
+      - I would like a screen showing the [shopping results with photos](query_1) of the [clothing and the models](query_2), also showing the [prices](query_3) and having a (query_4) option.
+      - No, I would like to have only 4 [items](query_1) on the screen, with [prices](query_2) and with a [filter element](query_3).
+      - I need a [check out](query_1) screen with the option to choose the [payment address](query_2), my [order](query_3) and a  [summary](query_4).
+      - No, I want a screen that shows the [total of my order](query_1) and the [items I am buying](query_2)
+      - Yes, I want a screen that appears on [checkout](query_1) and shows the [item](query_2) I am [shopping](query_3)
+      - No, I want a screen that shows the [total of my order](query_1) and the [items](query_2) I am [buying](query_3)
+      - I would like to [pay](query_1) and find out about [shipment methods](query_2)
+      - No, I wish to have a [photo](query_1) of a [travel destination](query_2) with the [price](query_3) on it.
+      - I would like to have a screen for [filling out the contact details](query_1) and [passenger information](query_2) with the option to [close](query_3) it on the bottom right corner.
+      - I need a screen to [search for hotels](query_1) in the [travel destination](query_2) with the option to [select the city and travel dates](query_3).
+      - I would like to have a [map](query_1) showing me the [prices](query_2) of the [different hotels](query_3) in the [area](query_4) with a small [preview of the hotel](query_5) on the bottom.
+      - I would like to have a [map](query_1) showing me the [location](query_2) of the [different hotels](query_3) in the [area](query_4) with a small [ad](query_5) on the bottom.
+      - No, I would like to have an [overview of my booking](query_1) with the [booking details](query_2), a [payment info section](query_3) and a [total cost](query_4).
+      - I would like a screen with the option to [select the topics I'm interested in](query_1) and a [button](query_2) on the bottom to [continue](query_3).
+      - I need a [subscription](query_1) to a [Newsletter](query_2) screen with a [photo of the newsletter](query_3) and the option to [subscribe](query_4) on the bottom.
+      - I need a [health](query_1) app with a very first screen showing an [overview of the different activities](query_2) and a [pedometer](query_3)
+      - I would like to have the [menu](query_1) options on the top of the screen and the [various activities](query_2) displayed on the bottom half of the screen.
+      - I need a screen where users can [enter](query_1) their [body measurements](query_2) with at least six [different options](query_3).
+      - I need a [pop-up](query_1) screen showing the [different exercises](query_2) with the option to [cancel](query_3) on the bottom center of the screen.
+      - I need a screen with at least ten [different sport activities](query_1) such as [biking, running, boxing](query_2) and a [cancel](query_3) option on the bottom.
+      - Yes, but I would like to have [more activities](query_1) shown and the [cancel](query_3) option on the bottom of the screen.
+      - I need a [news](query_1) ui with [weather forecast](query_2) displaying the [degrees in celsius](query_3)
+      - I want to have a map of hotels where the hotel is already selected and I there is a location button
+      - I want to see a [profile](query_1) screen where you can [upload a photo](query_2), [edit your activities](query_3) and [enter information about your gender](query_4)
+      - I need a [music](query_1) ui where you can [search for songs](query_2), [play songs](query_3) and view the [playlist](query_4).
+      - I want a [music](query_1) screen with the option to [group songs by album, artist and title](query_2), [create playlists](query_3) and [display all songs in a list](query_4).
+      - i want to see an [image gallery](query_1) with a [grid layout](query_2) in a [social profile](query_3) like in [facebook or instagram](query_4)
+      - I am looking for a screen to [share content](query_1) via [email and social media](query_2) - [facebook, twitter, tumblr](query_3) and the screen should also have the options to [copy the link](query_4) and to [cancel](query_5).
+      - No, I the screen I am looking for has the options to [share to facebook, instagramm and whatsapp](query_1) and the options appear in a [pop-up](query_2) window.
+      - Yes, I would like to have a screen where the users of the [shopping](query_1) app can have an [overview of their settings, friends, ratings](query_2) and so on.
+      - show me a screen of my [profile](query_1) in a [shopping](query_2) app
+      - I want to see my [profile](query_1) from the [shopping](query_2) app
+      - I want a [login](query_1) screen with the options to [sign in with facebook or google](query_2) and there should be a [checkbox with remember me](query_3)
+      - show me [login](query_1) screens with a [checkbox](query_2) for a [remember me function](query_3)
+      - i want a [shopping cart](query_1) screen with a [sign in](query_2) option
+      - i need a [shopping](query_1) ui with an [add button](query_2)
+      - I would like to have the option to [login via Facebook and Google accounts](query_1) and have a nice [background photo](query_2) of people on their phones.
+      - I want a screen where I can [search for hotels](query_1) and specify a [location, dates and guests](query_2)
+      - I need a screen with the [booking information](query_1) needed to [book a hotel](query_2) and a [cost summary](query_3).
+      - No, I the screen I am looking for has the options to [upload a gallery](query_1) and the options appear in a [pop-up](query_2).
+      - Yes, I would like to have a screen where the users of the [tracking](query_1) app can have an [overview of their routes, scores, and favourite tracks](query_2) and so on.
+      - show me a screen of my [favourite songs](query_1) in a [music](query_2) app
+      - I want to see my [status](query_1) from the [logistics](query_2) app
+      - I want a [search](query_1) screen with the options to [select product attributes](query_2) and there should be a [sort by attributes](query_3)
+      - show me [property](query_1) screens with a [radio button](query_2) to [select gender](query_3)
+      - i want a [splash](query_1) screen with a [logo in the middle](query_2) of the screen
+      - i need a [magazine](query_1) app with a [subscribe button](query_2)
+      - I would like to have the option to [add friends](query_1) and have a nice [cover photo](query_2) of my [profile](query_3).
+      - I want a screen where I can [look up information](query_1) and [add notes](query_2)
+      - I need a screen where I can [make a transcation](query_1) and see the [difference in my account balance](query_2).
+      - i want to see an [bookshelf](query_1) with [one book selected](query_2)
+      - I am looking for a screen to [search for books](query_1) and [sort them by ranking or by newly added](query_2).
+      - No, the screen I am looking for has [an image of a book](query_1) and the options to [buy or loan the book](query_2).
+      - Yes, I would like to have a screen where the users of the [banking](query_1) app can have an [overview of their settings, recent transactions, deposits](query_2) and so on.
+      - show me a screen of my [progress](query_1) in the [learning](query_2) app
+      - I want to see my [list of learned vocabulary](query_1) from the [educational](query_2) app
+      - I want a an app for [learning languages](query_1) with the options to [select a language to learn](query_2) and there should be a [field to enter your current level of command](query_3)
+      - show me a [book reader](query_1) screen with a [the book already opened for reading](query_2) and an [add banner in the bottom of the page](query_3)
+      - i want a [books](query_1) screen with a [save button](query_2)
+      - i need a [insurance](query_1) app with a [chatbot window](query_2)
+      - I would like to have the option to [save my notes](query_1) and have a [list of all of my notes](query_2).
+      - I want a screen where I can [search for insureances](query_1) and specify [parameters of the insurance] I want to have (query_2)
+      - I need a screen with the [booking information](query_1) needed to [book a hotel](query_2) and a [cost summary](query_3).
+      - No, I the screen I am looking for has the options to [save the reading page](query_1) and you can do that in the [dialog window](query_2).
+      - Yes, I would like to have a screen where the users of the [gaming](query_1) app can see [their scores in the last 20 game rounds](query_2).
+      - show me a screen of my [favourite songs](query_1) in a [music](query_2) app
+      - I want to see my [status](query_1) from the [logistics](query_2) app
+      - [drawing](query_1) app where you [select a drawing pattern](query_2) and can [choose from many different colours](query_3)
+      - show me a [list of learnign topics](query_1) with a [checkbox](query_2) to [select the topics I want to learn](query_3)
+      - i want a [splash](query_1) screen with a [logo in the middle](query_2) of the screen
+      - screens for [making investments](query_1) where you can [select the type of investement that you want to make](query_2)
+      - I want a screen where I can [make investements](query_1) and see an [investements' chart](query_2)
+      - I need a screen where I can [check the stock levels](query_1) and see the [the prices for selected stocks](query_2).
+
+  - intent: requirement_query_negative
+    examples: |
+      - I dont want a [remember me function](query_negative)
+      - i dont want to have [remember me](query_negative)
+      - dont need a [linkedin login](query_negative)
+      - take out [social login](query_negative)
+      - find me results without [social login](query_negative)
+      - no [linkedin login](query_negative)
+      - show me screens without [profile picture](query_negative)
+      - dont show me results with a [checkbox](query_negative)
+      - no, I don't want to have [radio buttons](query_negative)
+      - remove the screens with [modal](query_negative) from the results
+      - show me UIs that dont have a [slider control](query_negative)
+      - I dont want to have a [search field](query_negative)
+      - filter out the screens with [notification](query_negative)
+      - dont show me screens with [tooltips](query_negative)
+      - dont want to have a [submit form](query_negative)
+      - you are giving me results with [menus](query_negative). I dont want that.
+      - I dont want [check-in](query_negative) guis.
+      - no, i dont want to have an [empty shopping bag](query_negative)
+      - screens without [social login](query_negative)
+      - no [sign-in with social media](query_negative)
+      - no [facebook sign-in](query_negative)
+      - without [google login](query_negative)
+      - leave out results with [login via linkedin](query_negative)
+      - remove the screens with [toggle button](query_negative)
+      - i dont want to have any [maps](query_negative)
+      - no [camera pics](query_negative)
+      - without [picture](query_negative)
+      - dont show me any [calculation](query_negative)
+      - take away any [splash](query_negative) screens from the examples
+      - dont want any [ad](query_negative) screens
+      - no, no screens with [call support button](query_negative)
+      - eliminate all [faq](query_negative) screens
+      - i am not looking for a [disclaimer](query_negative)
+      - not looking for a [shopping basket](query_negative)
+      - dont need to [measure pulse](query_negative)
+      - can you remove the [medical](query_negative) screens
+      - i dont want to see any screens with a [login app bar](query_negative)
+      - eliminate the screens where the [button is pressed or clicked](query_negative)
+      - not with [action bar title](query_negative)
+      - yes, but i dont want to have a [button to continue shopping](query_negative)
+      - remove the [button in the middle](query_negative)
+
+  - intent: requirement_query_more_options
+    examples: |
+      - no show me more options
+      - show me more options
+      - give me more options
+      - I want to see more of the same screens
+      - show me more of these screens
+      - show me the next top results
+      - Give me another 20 screens
+      - I can't find the screen I am looking for. Show me more options.
+      - Can you show me more screens?
+      - give me other options
+      - i am looking for more options
+      - what are other options?
+      - i want to see more options
+      - can you show me more options?

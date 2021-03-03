@@ -1,0 +1,201 @@
+version: "2.0"
+
+rules:
+  - rule: Say hello anytime the user says hello
+    steps:
+      - intent: greet
+      - action: utter_greet
+    wait_for_user_input: false
+
+  - rule: Say goodbye anytime the user says goodbye
+    steps:
+      - intent: goodbye
+      - action: utter_goodbye
+    wait_for_user_input: false
+
+  - rule: Say 'I am a bot' anytime the user challenges
+    steps:
+      - intent: bot_challenge
+      - action: utter_iamabot
+    wait_for_user_input: false
+
+  - rule: Give help anytime the user requests help
+    steps:
+      - intent: help
+      - action: utter_help
+    wait_for_user_input: false
+
+  - rule: Tell a joke anytime the user tells a joke
+    steps:
+      - intent: joke
+      - action: action_joke
+    wait_for_user_input: false
+
+  - rule: Say welcome anytime the user says thanks
+    steps:
+      - intent: thanks
+      - action: utter_thanks
+    wait_for_user_input: false
+
+  - rule: Listen for requirement query anytime after greeting
+    steps:
+      - action: utter_greet
+      - intent: requirement_query
+    wait_for_user_input: false
+
+  # - rule: Listen for requirement with queries anytime after greeting
+  #   steps:
+  #     - action: utter_greet
+  #     - intent: requirement_query_multiple
+  #   wait_for_user_input: false
+
+  - rule: Return query results anytime the user makes a query request
+    steps:
+      - intent: requirement_query
+      #- action: utter_return_query_results
+      - action: action_response_query
+    wait_for_user_input: false
+
+  # - rule: Return query results anytime the user makes a multiple query request
+  #   steps:
+  #     - intent: requirement_query_multiple
+  #     #- action: utter_return_query_results
+  #     - action: action_response_query_multiple
+  #   wait_for_user_input: false
+
+  - rule: Ask if results helpful anytime after results returned
+    steps:
+      #- action: utter_return_query_results
+      - action: action_response_query
+      - action: utter_did_that_help
+    wait_for_user_input: false
+
+  # - rule: Ask if results helpful anytime after results for multiple returned
+  #   steps:
+  #     #- action: utter_return_query_results
+  #     - action: action_response_query_multiple
+  #     - action: utter_did_that_help
+  #   wait_for_user_input: false
+
+  - rule: Path for results helpful
+    steps:
+      - action: utter_did_that_help
+      - intent: affirm
+      - action: utter_more_screens
+    wait_for_user_input: false
+
+  - rule: Path for results unhelpful
+    steps:
+      - action: utter_did_that_help
+      - intent: deny
+      - action: utter_rephrase
+    wait_for_user_input: false
+
+  - rule: Path for rephrase
+    steps:
+      - action: utter_rephrase
+      - intent: requirement_query
+    wait_for_user_input: false
+
+  # - rule: Path for rephrase with multiple queries
+  #   steps:
+  #     - action: utter_rephrase
+  #     - intent: requirement_query_multiple
+  #   wait_for_user_input: false
+
+  - rule: Happy path for more screens 1
+    steps:
+      - action: utter_more_screens
+      - intent: affirm
+      - action: utter_what_other_screens
+    wait_for_user_input: false
+
+  - rule: Happy path for more screens 2
+    steps:
+      - action: utter_more_screens
+      - intent: requirement_query
+    wait_for_user_input: false
+
+  - rule: Other screens
+    steps:
+      - action: utter_what_other_screens
+      - intent: requirement_query
+    wait_for_user_input: false
+
+  # - rule: Other screens
+  #   steps:
+  #     - action: utter_what_other_screens
+  #     - intent: requirement_query_multiple
+  #   wait_for_user_input: false
+
+  - rule: Unhappy path for more screens
+    steps:
+      - action: utter_more_screens
+      - intent: deny
+      - action: utter_goodbye
+    wait_for_user_input: false
+
+  - rule: Rephrase on fallback
+    steps:
+      - intent: nlu_fallback
+      - action: utter_fallback_rephrase
+    wait_for_user_input: false
+
+  - rule: Anytime the user asks how doing
+    steps:
+      - intent: ask_how_doing
+      - action: utter_how_doing
+    wait_for_user_input: false
+
+  - rule: Negative query
+    steps:
+      - intent: requirement_query_negative
+      #- action: utter_return_query_results_negative
+      - action: action_response_query_negative
+    wait_for_user_input: false
+
+  - rule: Path for rephrase negative query
+    steps:
+      - action: utter_rephrase
+      - intent: requirement_query_negative
+    wait_for_user_input: false
+
+  - rule: Ask if results helpful anytime after results negative returned
+    steps:
+      #- action: utter_return_query_results_negative
+      - action: action_response_query_negative
+      - action: utter_did_that_help
+    wait_for_user_input: false
+
+  - rule: Return more screens
+    steps:
+      #- action: utter_return_query_results_negative
+      - intent: requirement_query_more_options
+      - action: action_response_more_screens
+    wait_for_user_input: false
+
+  - rule: Ask if results helpful anytime after bot returns next results
+    steps:
+      #- action: utter_return_query_results_negative
+      - action: action_response_more_screens
+      - action: utter_did_that_help
+    wait_for_user_input: false
+  # - rule: Extended query
+  #   steps:
+  #     - intent: requirement_query_extended
+  #     #- action: utter_return_query_results_extended
+  #     - action: action_response_query_extended
+  #   wait_for_user_input: false
+
+  # - rule: Path for rephrase extended query
+  #   steps:
+  #     - action: utter_rephrase
+  #     - intent: requirement_query_extended
+  #   wait_for_user_input: false
+
+  # - rule: Ask if results helpful anytime after results extended returned
+  #   steps:
+  #     #- action: utter_return_query_results_extended
+  #     - action: action_response_query_extended
+  #     - action: utter_did_that_help
+  #   wait_for_user_input: false

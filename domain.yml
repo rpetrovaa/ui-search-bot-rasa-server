@@ -1,0 +1,121 @@
+version: "2.0"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - help
+  - joke
+  - thanks
+  - ask_how_doing
+  - nlu_fallback
+  - requirement_query_more_options
+  - requirement_query:
+      use_entities:
+        - query_1
+        - query_2
+        - query_3
+        - query_4
+        - query_5
+      ignore_entities:
+        - query_negative
+  - requirement_query_negative:
+      use_entities:
+        - query_negative
+      ignore_entities:
+        - query_1
+        - query_2
+        - query_3
+        - query_4
+        - query_5
+slots:
+  query_negative:
+    type: text
+    influence_conversation: true
+  query_1:
+    type: text
+    influence_conversation: true
+  query_2:
+    type: text
+    influence_conversation: true
+  query_3:
+    type: text
+    influence_conversation: true
+  query_4:
+    type: text
+    influence_conversation: true
+  query_5:
+    type: text
+    influence_conversation: true
+responses:
+  utter_greet:
+    - text:
+        Hi! I'm UI Search Bot. I'm here to assist you with finding the right GUI
+        screens for your project. What UI screens are you looking for?
+  utter_cheer_up:
+    - image: https://i.imgur.com/nGF1K8f.jpg
+      text: "Here is something to cheer you up:"
+  utter_did_that_help:
+    - text: Did that help you?
+    - text: Did you find the results helpful?
+    - text: Are the results helpful?
+  utter_happy:
+    - text: Great, carry on!
+  utter_thanks:
+    - text: You are welcome!
+  utter_goodbye:
+    - text: Bye.
+    - text: Bye, bye!
+    - text: See you.
+  utter_help:
+    - text:
+        I can help you to find GUI screens for your project. Just tell me what are
+        you looking for (e.g. "login screen").
+  utter_iamabot:
+    - text: I am UI Search Bot. I am a bot, powered by Rasa.
+  # utter_return_query_results:
+  #   - custom:
+  #       data:
+  #         text: { query }
+  #         #text: Here are your {query} results.
+  #         #text: Here are your results.
+  #       payload: query
+  # utter_return_query_results_extended:
+  #   - custom:
+  #       data:
+  #         text: { query_extended }
+  #         #text: Here are your extended results.
+  #       payload: query_extended
+  # utter_return_query_results_negative:
+  #   - custom:
+  #       data:
+  #         text: { query_negative }
+  #         #text: Here are your results without {query_negative}.
+  #         #text: Here are your results.
+  #       payload: query_negative
+  utter_rephrase:
+    - text:
+        I am sorry to hear that. Could you please explain to me in other words what
+        are you looking for?
+  utter_more_screens:
+    - text: Do you need some more screens? :)
+  utter_what_other_screens:
+    - text: What other screens would you like to have?
+  utter_fallback_rephrase:
+    - text: Sorry, I didn't get that. Could you please rephase?
+  utter_how_doing:
+    - text: I'm great! Thanks for asking.
+  # utter_top_n_results:
+  #   - text: Would you like to receive the top N results? E.g., top 5?
+actions:
+  - action_joke
+  - action_response_query
+  - action_response_query_negative
+  - action_response_more_screens

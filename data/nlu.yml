@@ -566,6 +566,39 @@ nlu:
       - screens for [making investments](query_1) where you can [select the type of investement that you want to make](query_2)
       - I want a screen where I can [make investements](query_1) and see an [investements' chart](query_2)
       - I need a screen where I can [check the stock levels](query_1) and see the [the prices for selected stocks](query_2).
+      - Show me [video player](query_1) screens that [display different videos](query_2) and have the options to [filter videos and sort](query_3).
+      - show me a screen of my [playlists](query_1) in a [video browsing](query_2) app
+      - I am looking to [create playlists](query_1) of [different videos](query_2) in my [user account](query_3)
+      - I need a screen for [uploading and organizing media files](query_1), e.g. [images, videos](query_2)
+      - I would like to have a screen for [scheduling the dates and times](query_1) to [display the ad](query_2) that can be managed from the [retail store](query_3) application.
+      - Show me ui screens for [retail stores](query_1) where you can [manage campaign quotas](query_2) and other [ad campaign](query_3) related things
+      - I want a mockup of an app where you can [generat customer summary reports](query_1) and [show an analysis](query_2) of each [store’s sales](query_3).
+      - Show me screens for an app where you the user [subscribes to providers](query_1) to [receive ads, promotions and product recommendations](query_3).
+      - As a user I would like to see [pictures, news and product recommendations](query_1) displayed in the mobile application’s [feed](query_2)
+      - The application shall have a ui screen for [notifications about articles and discounts](query_1)
+      - As a user I want to have a screen where I can [sort, group ads, promotions and posts](query_1) shown in the application’s [feed](query_2)
+      - Screen to [snooze or turn-off notifications](query_1) in the mobile application.
+      - As a user I want to [enter personal data](query_2) that can be [integrated with other systems](query_2), e.g. [Outlook](query_3)
+      - I want to see the [sales history](query_1) in my [retail store](query_2).
+      - I need a mockup to [set remininders](query_2), [add new events](query_3) and [import ics files](query_4) on my [calender](query_4) app.
+      - Screen to [enter my personal preference](query_1) and [set location and time of events](query_2).
+      - As a user I want to [set the number of notifications](query_1) to receive and [disable permissions for particular services](query_2).
+      - The app ui should contain an [opened user manual](query_1) on how to [use desired product](query_2).
+      - I want a ui for a [sports](query_1) app that lists the [game results](query_2) in a [table](query_3)
+      - Show me screens with an [export button](query_1) to [export files in csv format](query_2)
+      - As a user I want to [download all my personal information](query_1) the system has about me and [request his information to be deleted](query_2).
+      - I need a screen in a [sales](query_1) application to [fill out a form](query_2) and [mark empty fields red on validation](query_3)
+      - Screen for [logging in and signing up](query_1), where the user is asked for a [valid e-mail address and a password](query_2).
+      - I want screen for [recovery of username and password](query_1) and the option to [receive an email](query_2) to [reset the username and password](query_3)
+      - Screen that [displays a dashboard for admin users](query_1) and has an [edit button](query_2)
+      - I want a screen to [create new documents](query_1) for (presentations)(query_2).
+      - There must be a [customer support system for retailers](query_1) as part of the [shopping system](query_2)
+      - Mobile application users can [search for discounts](query_1), [receive offers](query_2) and [shop the sales](query_3)
+      - I want a [bookshelf](query_1) with a [pop-up menu](query_2) and the option to [sort by author, title and other properties](query_3)
+      - i want an [overview of a book](query_1) with [download, read and share buttons](query_2) and an [advertisement] in the bottom of the page(query_3)
+      - show me results with [read](query_1) options
+      - and I want results that have [login with linkedin](query_1)
+      - I want a [bookshelf](query_1) with the options to [display, filter, edit and create new folder](query_2)
 
   - intent: requirement_query_negative
     examples: |

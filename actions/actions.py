@@ -52,8 +52,10 @@ class ActionJoke(Action):
 
     def run(self, dispatcher, tracker, domain):
         # what your action should do
-        request = json.loads(requests.get('https://official-joke-api.appspot.com/random_joke').text)  # make an api call
-        joke = request['setup'] + '\n' + '– ' + request['punchline'] # extract a joke from returned json response
+        request = json.loads(requests.get(
+            'https://official-joke-api.appspot.com/random_joke').text)  # make an api call
+        # extract a joke from returned json response
+        joke = request['setup'] + '\n' + '– ' + request['punchline']
         dispatcher.utter_message(joke)  # send the message back to the user
         return []
 
@@ -137,7 +139,7 @@ class ActionResponseQueryNegative(Action):
         # else::
         #     utterance = "Here are your results without {}.".format(response["custom"]["data"]["text"]["query"])
 
-        #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
+        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         return [BotUttered(None, response), AllSlotsReset()]
 
 # class ActionResponseQueryExtended(Action):
@@ -181,6 +183,7 @@ class ActionResponseQueryNegative(Action):
 #         #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
 #         return [BotUttered(None, response), AllSlotsReset()]
 
+
 class ActionResponseQuery(Action):
     def name(self):
         # define the name of the action which can then be included in training stories
@@ -200,7 +203,8 @@ class ActionResponseQuery(Action):
         entity_4 = next(tracker.get_latest_entity_values("query_4"), None)
         entity_5 = next(tracker.get_latest_entity_values("query_5"), None)
 
-        print("latest entity values: ", [entity_1, entity_2, entity_3, entity_4, entity_5])
+        print("latest entity values: ", [
+              entity_1, entity_2, entity_3, entity_4, entity_5])
         print("slot values: ", [query_1, query_2, query_3, query_4, query_5])
         print("intent: ", tracker.get_intent_of_latest_message())
 
@@ -214,7 +218,7 @@ class ActionResponseQuery(Action):
 
         if entity_1 != None:
             if query_1 != None and query_1 not in entity_1:
-                query_1 += " " + entity_1
+                query_1 = entity_1 + " " + query_1
             else:
                 query_1 = entity_1
         else:
@@ -224,7 +228,7 @@ class ActionResponseQuery(Action):
         if entity_2 != None:
             print(query_1)
             if query_2 != None and query_2 not in entity_2 and query_2 not in query_1:
-                query_2 += " " + entity_2
+                query_2 = entity_2 + " " + query_2
             else:
                 if query_2 in query_1:
                     query_2 = ""
@@ -236,7 +240,7 @@ class ActionResponseQuery(Action):
 
         if entity_3 != None:
             if query_3 != None and query_3 not in entity_3:
-                query_3 += " " + entity_3
+                query_3 = entity_3 + " " + query_3
             else:
                 query_3 = entity_3
         else:
@@ -245,7 +249,7 @@ class ActionResponseQuery(Action):
 
         if entity_4 != None:
             if query_4 != None and query_4 not in entity_4:
-                query_4 += " " + entity_4
+                query_4 = entity_4 + " " + query_4
             else:
                 query_4 = entity_4
         else:
@@ -254,7 +258,7 @@ class ActionResponseQuery(Action):
 
         if entity_5 != None:
             if query_5 != None and query_5 not in entity_5:
-                query_5 += " " + entity_5
+                query_5 = entity_5 + " " + query_5
             else:
                 query_5 = entity_5
         else:
@@ -281,7 +285,8 @@ class ActionResponseQuery(Action):
         #     if entity_5 != None:
         #         query_5 = entity_5
 
-        query = ' '.join(filter(None, (query_1, query_2, query_3, query_4, query_5)))
+        query = ' '.join(
+            filter(None, (query_1, query_2, query_3, query_4, query_5)))
         #query = query_1 + " " + query_2 + " " + query_3 + " " + query_4 + " " + query_5
 
         if query == "":
@@ -303,7 +308,7 @@ class ActionResponseQuery(Action):
         # else::
         #     utterance = "Here are your results with {}.".format(response["custom"]["data"]["text"]["query"])
 
-        #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
+        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         return [BotUttered(None, response), AllSlotsReset()]
 
 
@@ -325,7 +330,7 @@ class ActionResponseMoreScreens(Action):
         text = {}
         query_r = {}
 
-        query_r["query"] = "query" #query
+        query_r["query"] = "query"  # query
         text["text"] = query_r
         data["data"] = text
         data["payload"] = "more_screens"
@@ -340,7 +345,7 @@ class ActionResponseMoreScreens(Action):
         # else::
         #     utterance = "Here are your results without {}.".format(response["custom"]["data"]["text"]["query"])
 
-        #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
+        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         utter = "Here are the next top 20 screens."
 
         return [BotUttered(utter, response)]

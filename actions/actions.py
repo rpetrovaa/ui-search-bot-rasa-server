@@ -43,6 +43,20 @@ import json
 #from rasa_core_sdk import Action
 
 logger = logging.getLogger(__name__)
+global query_global
+
+test1 = "news headline"
+test2 = "news video"
+a1 = test1.split()
+a2 = test2.split()
+s1 = set(a1)
+s2 = set(a2)
+s3 = s2 - s1
+a3 = a1 + list(s3)
+test3 = ' '.join(a3)
+
+#print("Test: ", test2.find(test1))
+print("test3: ", test3)
 
 
 class ActionJoke(Action):
@@ -124,6 +138,21 @@ class ActionResponseQueryNegative(Action):
         if query != entity:
             query = query
 
+        global query_global
+        print("query_global: ", query_global)
+
+        # if query_global != None and query.find(query_global) == -1 and query_global.find(query) == -1:
+        if query_global != None:
+            #    query = query_global + " " + query
+            # elif query_global.find(query)
+            a1 = query_global.split()
+            a2 = query.split()
+            s1 = set(a1)
+            s2 = set(a2)
+            s3 = s2 - s1
+            a3 = a1 + list(s3)
+            query = ' '.join(a3)
+
         query_r["query"] = query
         text["text"] = query_r
         data["data"] = text
@@ -196,16 +225,19 @@ class ActionResponseQuery(Action):
         query_3 = tracker.get_slot("query_3")
         query_4 = tracker.get_slot("query_4")
         query_5 = tracker.get_slot("query_5")
+        query_6 = tracker.get_slot("query_6")
 
         entity_1 = next(tracker.get_latest_entity_values("query_1"), None)
         entity_2 = next(tracker.get_latest_entity_values("query_2"), None)
         entity_3 = next(tracker.get_latest_entity_values("query_3"), None)
         entity_4 = next(tracker.get_latest_entity_values("query_4"), None)
         entity_5 = next(tracker.get_latest_entity_values("query_5"), None)
+        entity_6 = next(tracker.get_latest_entity_values("query_6"), None)
 
         print("latest entity values: ", [
-              entity_1, entity_2, entity_3, entity_4, entity_5])
-        print("slot values: ", [query_1, query_2, query_3, query_4, query_5])
+              entity_1, entity_2, entity_3, entity_4, entity_5, entity_6])
+        print("slot values: ", [query_1, query_2,
+                                query_3, query_4, query_5, query_6])
         print("intent: ", tracker.get_intent_of_latest_message())
 
         response = {}
@@ -265,6 +297,15 @@ class ActionResponseQuery(Action):
             if query_5 == None:
                 query_5 = ""
 
+        if entity_6 != None:
+            if query_6 != None and query_6 not in entity_6:
+                query_6 = entity_6 + " " + query_6
+            else:
+                query_6 = entity_6
+        else:
+            if query_6 == None:
+                query_6 = ""
+
         # if query_2 == None:
         #     query_2 = ""
         #     if entity_2 != None:
@@ -286,11 +327,13 @@ class ActionResponseQuery(Action):
         #         query_5 = entity_5
 
         query = ' '.join(
-            filter(None, (query_1, query_2, query_3, query_4, query_5)))
+            filter(None, (query_1, query_2, query_3, query_4, query_5, query_6)))
         #query = query_1 + " " + query_2 + " " + query_3 + " " + query_4 + " " + query_5
 
         if query == "":
             query = None
+        global query_global
+        query_global = query
 
         query_r["query"] = query
         text["text"] = query_r

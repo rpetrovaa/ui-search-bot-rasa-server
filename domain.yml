@@ -24,6 +24,7 @@ intents:
         - query_3
         - query_4
         - query_5
+        - query_6
       ignore_entities:
         - query_negative
   - requirement_query_negative:
@@ -35,6 +36,7 @@ intents:
         - query_3
         - query_4
         - query_5
+        - query_6
 slots:
   query_negative:
     type: text
@@ -52,6 +54,9 @@ slots:
     type: text
     influence_conversation: true
   query_5:
+    type: text
+    influence_conversation: true
+  query_6:
     type: text
     influence_conversation: true
 responses:

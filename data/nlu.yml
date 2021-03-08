@@ -599,6 +599,19 @@ nlu:
       - show me results with [read](query_1) options
       - and I want results that have [login with linkedin](query_1)
       - I want a [bookshelf](query_1) with the options to [display, filter, edit and create new folder](query_2)
+      - I need a [recipe overview](query_1) with [share, edit and dot menu](query_2) options
+      - The [recipe overview](query_1) is a [selected tab](query_2) from a [list of tabs](query_3) including [ingredients, directions, notes](query_4), etc.
+      - Show me [recipe](query_1) screens with a [start rating](query_2) that displays the [preparation time, total time and the number of servings](query_3)
+      - I want a [food oredering](query_1) app with a [background image of a dish](query_2) and a the buttons to [make an new order, view my recent orders and show favorites](query_3)
+      - I would like to an app to [search for books](query_1) where the [tab category is selected](query_2) and there is a [pop-up dialog with subcategories](query_3)
+      - The screen should have three [tabs](query_1) in total - [category, location and refine](query_2)
+      - [Recipe search](query_1) showing [recipes in a grid](query_2)
+      - [Search for games] for [xbox one, playstation 4, wii u, nintendo](query_2) that displays the [results in a grid](query_3)
+      - I want a screen for [learning vocabulary](query_1) with a [button to play the pronounciation](query_2), a [progress bar](query_3) and a [start icon button to save favorites](query_4).
+      - Screen for [selecting the purpose of learning](query_1) where you can [enter your age group](query_2) and [select the purpose from a list or radio buttons](query_3) and [click on a button next](query_4)
+      - I want to [invite friends](query_1) to use the [language](query_2) app and have the options to [share via google+, email or sms](query_3)
+      - Looking for a ui mockup for [learning languages](query_1) that has two [dropdowns](query_2) - one for the [language I want to learn](query_3) and a second for the [languages that I speak](query_4)
+      - As a user I want to have ui mockup to [change the settings](query_1) of a [language learning](query_2) app with a [slide toggle](query_3)
 
   - intent: requirement_query_negative
     examples: |

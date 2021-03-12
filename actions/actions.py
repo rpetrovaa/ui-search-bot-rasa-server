@@ -142,7 +142,7 @@ class ActionResponseQueryNegative(Action):
         print("query_global: ", query_global)
 
         # if query_global != None and query.find(query_global) == -1 and query_global.find(query) == -1:
-        if query_global != None:
+        if query_global != None and query != None:
             #    query = query_global + " " + query
             # elif query_global.find(query)
             a1 = query_global.split()

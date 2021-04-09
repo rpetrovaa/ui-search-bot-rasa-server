@@ -521,7 +521,7 @@ nlu:
       - I want a [music](query_1) screen with the option to [group songs by album, artist and title](query_2), [create playlists](query_3) and [display all songs in a list](query_4).
       - i want to see an [image gallery](query_1) with a [grid layout](query_2) in a [social profile](query_3) like in [facebook or instagram](query_4)
       - I am looking for a screen to [share content](query_1) via [email and social media](query_2) - [facebook](query_3), [twitter](query_4), [tumblr](query_5) and the screen should also have the options to [copy the link](query_6) and to [cancel](query_5).
-      - No, I the screen I am looking for has the options to [share to facebook](query_1), [instagramm](query_2) and [whatsapp](query_3) and the options appear in a [pop-up](query_4) window.
+      - No, I the screen I am looking for has the options to [share to facebook](query_1), [instagram](query_2) and [whatsapp](query_3) and the options appear in a [pop-up](query_4) window.
       - Yes, I would like to have a screen where the users of the [shopping](query_1) app can have an [overview of their settings](query_2), [friends](query_3), [ratings](query_4) and so on.
       - show me a screen of my [profile](query_1) in a [shopping](query_2) app
       - I want to see my [profile](query_1) from the [shopping](query_2) app
@@ -612,9 +612,14 @@ nlu:
       - I want to [invite friends](query_1) to use the [language](query_2) app and have the options to [share via google](query_3), [email](query_4) or [sms](query_5)
       - Looking for a ui mockup for [learning languages](query_1) that has two [dropdowns](query_2) - one for the [language I want to learn](query_3) and a second for the [languages that I speak](query_4)
       - As a user I want to have ui mockup to [change the settings](query_1) of a [language learning](query_2) app with a [slide toggle](query_3)
+      - show me screens with a [function](query_1) to [keep me logged in](query_2)
+      - i need a [keep me logged in function](query_1)
+      - i need a [stay logged in checkbox](query_1)
+      - i need to [stay signed in](query_1)
 
   - intent: requirement_query_negative
     examples: |
+      - i do not want to [stay signed in](query_negative)
       - I dont want a [remember me function](query_negative)
       - i dont want to have [remember me](query_negative)
       - dont need a [linkedin login](query_negative)
@@ -656,6 +661,13 @@ nlu:
       - not with [action bar title](query_negative)
       - yes, but i dont want to have a [button to continue shopping](query_negative)
       - remove the [button in the middle](query_negative)
+      - i do not want location
+      - i do not want [continue as button](query_negative)
+      - i do not want to [create an account](query_negative)
+      - i do not want [shopping ad](query_negative)
+      - i do not want [login with instagram](query_negative)
+      - i do not want any [items in the bag](query_negative)
+      - i dont want [keep me logged in function](query_negative)
 
   - intent: requirement_query_more_options
     examples: |
@@ -673,3 +685,20 @@ nlu:
       - what are other options?
       - i want to see more options
       - can you show me more options?
+
+  - intent: response_correct_screen
+    examples: |
+      - Screen 4.
+      - Screen 10 is correct.
+      - Screen 20 is correct.
+      - Screen 1 is correct.
+      - Screen 5 is correct.
+      - screen 19 is correct
+      - screen 14
+      - The correct screen is screen 6
+      - screen number 13 is the correct screen
+      - Screen 11 is the screen I am looking for
+      - yes screen 9 is correct
+      - yeah, screen 2 is correct.
+      - Yes, I found the correct screen. Screen 8 is correct.
+      - ye, screen 7 is correct

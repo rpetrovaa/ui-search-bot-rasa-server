@@ -44,6 +44,7 @@ import json
 
 logger = logging.getLogger(__name__)
 global query_global
+query_global = ""
 
 test1 = "news headline"
 test2 = "news video"
@@ -240,6 +241,10 @@ class ActionResponseQuery(Action):
                                 query_3, query_4, query_5, query_6])
         print("intent: ", tracker.get_intent_of_latest_message())
 
+        # global query_global
+        # if query_global == :
+        #     query_global = ''
+
         response = {}
         data = {}
         text = {}
@@ -332,8 +337,28 @@ class ActionResponseQuery(Action):
 
         if query == "":
             query = None
+
         global query_global
-        query_global = query
+        # query_global += " " + query
+
+        # global query_global
+
+        # query_global = query
+
+        print("query_global: ", query_global)
+
+        # if query_global != None and query.find(query_global) == -1 and query_global.find(query) == -1:
+        if query_global != None and query != None:
+            #    query = query_global + " " + query
+            # elif query_global.find(query)
+            a1 = query_global.split()
+            a2 = query.split()
+            s1 = set(a1)
+            s2 = set(a2)
+            s3 = s2 - s1
+            a3 = a1 + list(s3)
+            query = ' '.join(a3)
+            query_global = query
 
         query_r["query"] = query
         text["text"] = query_r
@@ -390,5 +415,35 @@ class ActionResponseMoreScreens(Action):
 
         # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         utter = "Here are the next top 20 screens."
+
+        return [BotUttered(utter, response)]
+
+
+class ActionMoreScreensNeeded(Action):
+    def name(self):
+        return "action_ask_more_screens_needed"
+
+    def run(self, dispatcher, tracker, domain):
+
+        print("In ask if more screens needed")
+        print("\n")
+        response = {}
+        data = {}
+        text = {}
+        query_r = {}
+
+        query_r["query"] = "query"  # query
+        text["text"] = query_r
+        data["data"] = text
+        data["payload"] = "reset_state"
+        response["custom"] = data
+
+        print(response)
+        print("\n")
+
+        utter = "Do you need more screens? :)"
+
+        global query_global
+        query_global = ""
 
         return [BotUttered(utter, response)]

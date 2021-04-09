@@ -17,6 +17,7 @@ intents:
   - ask_how_doing
   - nlu_fallback
   - requirement_query_more_options
+  - response_correct_screen
   - requirement_query:
       use_entities:
         - query_1
@@ -68,9 +69,9 @@ responses:
     - image: https://i.imgur.com/nGF1K8f.jpg
       text: "Here is something to cheer you up:"
   utter_did_that_help:
-    - text: Did that help you?
-    - text: Did you find the results helpful?
-    - text: Are the results helpful?
+    - text: Did that help you? If you believe you have found the right screen, please indicate the screen number in the chat.
+    - text: Do you find the results helpful?  If you believe you have found the right screen, please indicate the screen number in the chat.
+    - text: Are the results helpful?  If you believe you have found the right screen, please indicate the screen number in the chat.
   utter_happy:
     - text: Great, carry on!
   utter_thanks:
@@ -124,3 +125,4 @@ actions:
   - action_response_query
   - action_response_query_negative
   - action_response_more_screens
+  - action_ask_more_screens_needed

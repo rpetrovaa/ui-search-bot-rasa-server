@@ -616,6 +616,18 @@ nlu:
       - i need a [keep me logged in function](query_1)
       - i need a [stay logged in checkbox](query_1)
       - i need to [stay signed in](query_1)
+      - [shopping](query_1) screen with [cart icon](query_2), [star rating](query_3) and [favorites](query_4)
+      - [list of hotels](query_1) with [price](query_2), [star rating](query_3), [number of reviews](query_4)
+      - i want a [book with a star rating](query_1), [preview](query_2) and [share buttons](query_3)
+      - i want a screen with a [book](query_1) with [download](query_2), [read](query_3) and [share buttons](query_4) and [advertisement](query_5)
+      - with [destination](query_1), [check-in](query_2), [check-out](query_3), [number of rooms](query_4), [number of guests](query_5)
+      - i want a [hotel search](query_1) with [check in](query_2), [check out](query_3) and [calendar](query_4)
+      - i want an app for [learning languages](query_1) where I can [select the language I speak](query_2) and the [language I want to learn](query_3) as well as [my level](query_4)
+      - I would want to [select country](query_1) with a [flag icon](query_2)
+      - i want to see screens with [terms and conditions](query_1)
+      - [create account](query_1) screens with [agree to terms and conditions](query_2) options
+      - show me screens with [heart icon](query_1) or [favorite icons](query_2)
+      - i would like to have a [delete icon](query_1)
 
   - intent: requirement_query_negative
     examples: |
@@ -668,6 +680,11 @@ nlu:
       - i do not want [login with instagram](query_negative)
       - i do not want any [items in the bag](query_negative)
       - i dont want [keep me logged in function](query_negative)
+      - do not want to have a [terms and conditions checkbox](query_negative)
+      - do not want a [keep me logged in option](query_negative)
+      - i don't want screens with a [flag icon](query_negative)
+      - i want screens without [heart icon](query_negative)
+      - I dont want a [delete icon](query_negative)
 
   - intent: requirement_query_more_options
     examples: |

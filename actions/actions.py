@@ -40,24 +40,10 @@ from rasa_sdk.events import SlotSet, BotUttered, AllSlotsReset
 import logging
 import requests
 import json
-#from rasa_core_sdk import Action
 
 logger = logging.getLogger(__name__)
 global query_global
 query_global = ""
-
-test1 = "news headline"
-test2 = "news video"
-a1 = test1.split()
-a2 = test2.split()
-s1 = set(a1)
-s2 = set(a2)
-s3 = s2 - s1
-a3 = a1 + list(s3)
-test3 = ' '.join(a3)
-
-#print("Test: ", test2.find(test1))
-print("test3: ", test3)
 
 
 class ActionJoke(Action):
@@ -74,47 +60,6 @@ class ActionJoke(Action):
         dispatcher.utter_message(joke)  # send the message back to the user
         return []
 
-
-# class ActionResponseQuery(Action):
-#     def name(self):
-#         # define the name of the action which can then be included in training stories
-#         return "action_response_query"
-
-#     def run(self, dispatcher, tracker, domain):
-#         # what your action should do
-#         query = tracker.get_slot("query")
-#         entity = next(tracker.get_latest_entity_values("query"), None)
-
-#         print("latest entity values: ", entity)
-#         print("slot value: ", query)
-#         print("intent: ", tracker.get_intent_of_latest_message())
-
-#         response = {}
-#         data = {}
-#         text = {}
-#         query_r = {}
-
-#         if query != entity:
-#             query = query
-
-#         query_r["query"] = query
-#         text["text"] = query_r
-#         data["data"] = text
-#         data["payload"] = "query"
-#         response["custom"] = data
-
-#         print(response)
-#         print("\n")
-
-#         #response = {"custom": {"data": {"text": {"query": query}}, "payload": "query"}}
-
-#         # if query == None:
-#         #     utterance = "Here are your results."
-#         # else::
-#         #     utterance = "Here are your {} results.".format(response["custom"]["data"]["text"]["query"])
-
-#         #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
-#         return [BotUttered(None, response), AllSlotsReset()]
 
 class ActionResponseQueryNegative(Action):
     def name(self):
@@ -158,60 +103,13 @@ class ActionResponseQueryNegative(Action):
         text["text"] = query_r
         data["data"] = text
         data["payload"] = "query_negative"
+        # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
 
         print(response)
         print("\n")
-        #response = {"custom": {"data": {"text": {"query": query}}, "payload": "query"}}
 
-        # if query == None:
-        #     utterance = "Here are your results."
-        # else::
-        #     utterance = "Here are your results without {}.".format(response["custom"]["data"]["text"]["query"])
-
-        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         return [BotUttered(None, response), AllSlotsReset()]
-
-# class ActionResponseQueryExtended(Action):
-#     def name(self):
-#         # define the name of the action which can then be included in training stories
-#         return "action_response_query_extended"
-
-#     def run(self, dispatcher, tracker, domain):
-#         # what your action should do
-#         query = tracker.get_slot("query_extended")
-#         entity = next(tracker.get_latest_entity_values("query"), None)
-
-#         print("latest entity values: ", entity)
-#         print("slot value: ", query)
-#         print("intent: ", tracker.get_intent_of_latest_message())
-
-#         response = {}
-#         data = {}
-#         text = {}
-#         query_r = {}
-
-#         if query != entity:
-#             query = query
-
-#         query_r["query"] = query
-#         text["text"] = query_r
-#         data["data"] = text
-#         data["payload"] = "query_extended"
-#         response["custom"] = data
-
-#         print(response)
-#         print("\n")
-
-#         #response = {"custom": {"data": {"text": {"query": query}}, "payload": "query"}}
-
-#         # if query == None:
-#         #     utterance = "Here are your results."
-#         # else::
-#         #     utterance = "Here are your results with {}.".format(response["custom"]["data"]["text"]["query"])
-
-#         #dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
-#         return [BotUttered(None, response), AllSlotsReset()]
 
 
 class ActionResponseQuery(Action):
@@ -241,17 +139,10 @@ class ActionResponseQuery(Action):
                                 query_3, query_4, query_5, query_6])
         print("intent: ", tracker.get_intent_of_latest_message())
 
-        # global query_global
-        # if query_global == :
-        #     query_global = ''
-
         response = {}
         data = {}
         text = {}
         query_r = {}
-
-        # if query != entity:
-        #     query = query
 
         if entity_1 != None:
             if query_1 != None and query_1 not in entity_1:
@@ -263,7 +154,6 @@ class ActionResponseQuery(Action):
                 query_1 = ""
 
         if entity_2 != None:
-            print(query_1)
             if query_2 != None and query_2 not in entity_2 and query_2 not in query_1:
                 query_2 = entity_2 + " " + query_2
             else:
@@ -311,39 +201,13 @@ class ActionResponseQuery(Action):
             if query_6 == None:
                 query_6 = ""
 
-        # if query_2 == None:
-        #     query_2 = ""
-        #     if entity_2 != None:
-        #         query_2 = entity_2
-
-        # if query_3 == None:
-        #     query_3 = ""
-        #     if entity_3 != None:
-        #         query_3 = entity_3
-
-        # if query_4 == None:
-        #     query_4 = ""
-        #     if entity_4 != None:
-        #         query_4 = entity_4
-
-        # if query_5 == None:
-        #     query_5 = ""
-        #     if entity_5 != None:
-        #         query_5 = entity_5
-
         query = ' '.join(
             filter(None, (query_1, query_2, query_3, query_4, query_5, query_6)))
-        #query = query_1 + " " + query_2 + " " + query_3 + " " + query_4 + " " + query_5
 
         if query == "":
             query = None
 
         global query_global
-        # query_global += " " + query
-
-        # global query_global
-
-        # query_global = query
 
         print("query_global: ", query_global)
 
@@ -364,19 +228,12 @@ class ActionResponseQuery(Action):
         text["text"] = query_r
         data["data"] = text
         data["payload"] = "query_extended"
+        # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
 
         print(response)
         print("\n")
 
-        #response = {"custom": {"data": {"text": {"query": query}}, "payload": "query"}}
-
-        # if query == None:
-        #     utterance = "Here are your results."
-        # else::
-        #     utterance = "Here are your results with {}.".format(response["custom"]["data"]["text"]["query"])
-
-        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
         return [BotUttered(None, response), AllSlotsReset()]
 
 
@@ -386,11 +243,7 @@ class ActionResponseMoreScreens(Action):
         return "action_response_more_screens"
 
     def run(self, dispatcher, tracker, domain):
-        # what your action should do
 
-        #print("state: ", tracker.current_state())
-        #print("latest entity values: ", entity)
-        #print("slot value: ", query)
         print("intent: ", tracker.get_intent_of_latest_message())
 
         response = {}
@@ -402,19 +255,13 @@ class ActionResponseMoreScreens(Action):
         text["text"] = query_r
         data["data"] = text
         data["payload"] = "more_screens"
+        # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
 
         print(response)
         print("\n")
-        #response = {"custom": {"data": {"text": {"query": query}}, "payload": "query"}}
 
-        # if query == None:
-        #     utterance = "Here are your results."
-        # else::
-        #     utterance = "Here are your results without {}.".format(response["custom"]["data"]["text"]["query"])
-
-        # dispatcher.utter_message("Here are your {} results.".format(response["custom"]["data"]["text"]["query"]))  # send the message back to the user
-        utter = "Here are the next top 20 screens."
+        utter = "Here are the next top 20 screens."  # message sent back to the user
 
         return [BotUttered(utter, response)]
 

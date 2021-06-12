@@ -7,7 +7,7 @@ pipeline:
   # If you'd like to customize it, uncomment and adjust the pipeline.
   # See https://rasa.com/docs/rasa/tuning-your-model for more information.
   - name: WhitespaceTokenizer
-  - name: RegexFeaturizer
+  - name: RegexFeaturizer # instantiated, but not executed, as no regular expressions are defined
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
   - name: CountVectorsFeaturizer
@@ -16,7 +16,7 @@ pipeline:
     max_ngram: 4
   - name: DIETClassifier
     epochs: 100
-  - name: EntitySynonymMapper
+  - name: EntitySynonymMapper # instantiated, but not executed, as no synonims are defined
   - name: ResponseSelector
     epochs: 100
   - name: FallbackClassifier

@@ -63,7 +63,7 @@ class ActionJoke(Action):
 
 class ActionResponseQueryNegative(Action):
     def name(self):
-        # define the name of the action which can then be included in training stories
+        # name of the action for processing Negative search requests
         return "action_response_query_negative"
 
     def run(self, dispatcher, tracker, domain):
@@ -71,7 +71,7 @@ class ActionResponseQueryNegative(Action):
         query = tracker.get_slot("query_negative")
         entity = next(tracker.get_latest_entity_values("query"), None)
 
-        #print("state: ", tracker.current_state())
+        # logging current entity, slot and intent values in the commandline
         print("latest entity values: ", entity)
         print("slot value: ", query)
         print("intent: ", tracker.get_intent_of_latest_message())
@@ -102,6 +102,7 @@ class ActionResponseQueryNegative(Action):
         query_r["query"] = query
         text["text"] = query_r
         data["data"] = text
+        # payload, which is forwarded to the Angular app indicating that the user made a Negative request
         data["payload"] = "query_negative"
         # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
@@ -114,7 +115,7 @@ class ActionResponseQueryNegative(Action):
 
 class ActionResponseQuery(Action):
     def name(self):
-        # define the name of the action which can then be included in training stories
+        # action to handle additive search requests
         return "action_response_query"
 
     def run(self, dispatcher, tracker, domain):
@@ -144,6 +145,7 @@ class ActionResponseQuery(Action):
         text = {}
         query_r = {}
 
+        # Pairwise combine the values of extracted entities and slots for additive requests. Leave only unique values
         if entity_1 != None:
             if query_1 != None and query_1 not in entity_1:
                 query_1 = entity_1 + " " + query_1
@@ -211,7 +213,7 @@ class ActionResponseQuery(Action):
 
         print("query_global: ", query_global)
 
-        # if query_global != None and query.find(query_global) == -1 and query_global.find(query) == -1:
+        # add the combined slots and entities from the current request to the global query tracking variable. Leave only unique values
         if query_global != None and query != None:
             #    query = query_global + " " + query
             # elif query_global.find(query)
@@ -227,6 +229,7 @@ class ActionResponseQuery(Action):
         query_r["query"] = query
         text["text"] = query_r
         data["data"] = text
+        # payload, which is forwarded to the Angular app indicating that the user made an Additive request
         data["payload"] = "query_extended"
         # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
@@ -239,7 +242,7 @@ class ActionResponseQuery(Action):
 
 class ActionResponseMoreScreens(Action):
     def name(self):
-        # define the name of the action which can then be included in training stories
+        # action in response to the intent to see the next top 20 GUIs
         return "action_response_more_screens"
 
     def run(self, dispatcher, tracker, domain):
@@ -254,6 +257,7 @@ class ActionResponseMoreScreens(Action):
         query_r["query"] = "query"  # query
         text["text"] = query_r
         data["data"] = text
+        # payload, which is forwarded to the Angular app indicating that the user made a request for "the next top 20 screens"
         data["payload"] = "more_screens"
         # response format: {"custom": {"data": {"text": {"query": query}}, "payload": query_type}}
         response["custom"] = data
@@ -268,11 +272,12 @@ class ActionResponseMoreScreens(Action):
 
 class ActionMoreScreensNeeded(Action):
     def name(self):
+        # action used to reset the state of the search session after the user has found a GUI to their search request.
         return "action_ask_more_screens_needed"
 
     def run(self, dispatcher, tracker, domain):
 
-        print("In ask if more screens needed")
+        print("In ask if more screens needed")  # resetting point
         print("\n")
         response = {}
         data = {}
@@ -282,13 +287,14 @@ class ActionMoreScreensNeeded(Action):
         query_r["query"] = "query"  # query
         text["text"] = query_r
         data["data"] = text
+        # payload, which is forwarded to the Angular app to reset the state of the search session.
         data["payload"] = "reset_state"
         response["custom"] = data
 
         print(response)
         print("\n")
 
-        utter = "Do you need more screens? :)"
+        utter = "Do you need more screens? :)"  # message sent back to the user
 
         global query_global
         query_global = ""

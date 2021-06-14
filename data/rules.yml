@@ -80,8 +80,8 @@ rules:
   - rule: Path for results helpful
     steps:
       - action: utter_did_that_help
-      - intent: affirm
-      - action: utter_more_screens
+      - intent: response_correct_screen
+      - action: action_ask_more_screens_needed
     wait_for_user_input: false
 
   - rule: Path for results unhelpful
@@ -105,14 +105,14 @@ rules:
 
   - rule: Happy path for more screens 1
     steps:
-      - action: utter_more_screens
+      - action: action_ask_more_screens_needed
       - intent: affirm
       - action: utter_what_other_screens
     wait_for_user_input: false
 
   - rule: Happy path for more screens 2
     steps:
-      - action: utter_more_screens
+      - action: action_ask_more_screens_needed
       - intent: requirement_query
     wait_for_user_input: false
 
@@ -130,7 +130,7 @@ rules:
 
   - rule: Unhappy path for more screens
     steps:
-      - action: utter_more_screens
+      - action: action_ask_more_screens_needed
       - intent: deny
       - action: utter_goodbye
     wait_for_user_input: false

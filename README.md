@@ -9,6 +9,7 @@ To run the Rasa Server you need to have Rasa installed locally. For installing R
 
 Once you have Rasa installed, you need to create a conda environment, where you can run the project.
 
-The command for starting the Rasa server is: rasa run -m models --enable-api --cors “\*” --debug
+The command for starting the Rasa server is: rasa run -m models --enable-api --cors "<asterix>" --debug
+Make sure to insert the icon for <asterix> instead of the tag
 
 In addition to the Rasa main Server you need to start the Custom Actions server. You can run Rasa Custom Actions with the following command: rasa run actions
